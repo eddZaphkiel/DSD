@@ -3,7 +3,7 @@
 **Objetivo**
 
 Diseñar e implementar un divisor de frecuencia en VHDL que genere dos señales de salida: una con una frecuencia de 1Hz y otra con una frecuencia de 4Hz. El objetivo principal es aprender a utilizar el cristal oscilador integrado en la FPGA y comprender el concepto de flanco de subida del reloj.
-s
+
 **Solución Implementada**
 
 La solución se basa en el uso de contadores y la detección del flanco de subida del reloj principal de la FPGA (50MHz). Se implementaron dos contadores:
