@@ -1,0 +1,32 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.ALL;
+USE ieee.numeric_std.ALL;
+
+ENTITY divisor1hz4hz IS
+	PORT(
+		CLK	:	in std_logic;
+		HZ1	:	out std_logic;
+		HZ2	:	out std_logic
+	);
+END divisor1hz4hz;
+
+
+ARCHITECTURE dividir OF divisor1hz4hz IS
+	
+BEGIN
+    PROCESS (clk_in)
+    BEGIN
+        IF rising_edge(clk_in) THEN
+            IF count < max_count - 1 THEN
+                count <= count + 1;
+            ELSE
+                count <= 0;
+                clk_reg <= NOT clk_reg;
+            END IF;
+        END IF;
+    END PROCESS;
+
+    clk_out <= clk_reg;
+
+END division;
+	

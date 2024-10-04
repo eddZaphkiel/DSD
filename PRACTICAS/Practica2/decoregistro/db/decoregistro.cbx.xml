@@ -1,0 +1,6 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="decoregistro">
+		<CBX_INST_ENTRY INSTANCE_NAME="|decoregistro|decoder:decoder_inst|altsyncram:Mux6_rtl_0" CBX_FILE_NAME="altsyncram_pe11.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

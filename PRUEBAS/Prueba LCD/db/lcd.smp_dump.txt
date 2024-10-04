@@ -1,0 +1,18 @@
+
+State Machine - |lcd|state
+Name state.finish state.write_o state.write_m state.write_a state.write_space state.write_e state.write_t state.entry_mode_set state.clear_display state.display_on state.function_set_4 state.function_set_3 state.function_set_2 state.function_set_1 state.init 
+state.init 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+state.function_set_1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+state.function_set_2 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+state.function_set_3 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+state.function_set_4 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+state.display_on 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+state.clear_display 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+state.entry_mode_set 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+state.write_t 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+state.write_e 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+state.write_space 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+state.write_a 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+state.write_m 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+state.write_o 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.finish 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 

@@ -1,0 +1,86 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.ALL;
+USE ieee.numeric_std.ALL;
+
+-- Entidad del decodificador de teclado a 7 segmentos
+ENTITY deco IS
+    PORT (
+        columnas : IN  STD_LOGIC_VECTOR(3 DOWNTO 0); -- Entradas de columnas
+        filas    : IN  STD_LOGIC_VECTOR(3 DOWNTO 0); -- Entradas de filas
+        segmentos: OUT STD_LOGIC_VECTOR(6 DOWNTO 0)  -- Salida al display de 7 segmentos
+    );
+END deco;
+
+-- Arquitectura del decodificador
+ARCHITECTURE Behavioral OF teclado_a_7seg IS
+    SIGNAL tecla_codificada : STD_LOGIC_VECTOR(3 DOWNTO 0);
+BEGIN
+    -- Proceso para codificar la tecla presionada
+    PROCESS (columnas, filas)
+    BEGIN
+        -- Inicialmente, ninguna tecla presionada
+        tecla_codificada <= "1111"; -- Valor por defecto (opcional)
+        
+        -- Mapeo de las combinaciones de filas y columnas a códigos hexadecimales
+        IF filas = "1110" THEN -- Fila 0
+            CASE columnas IS
+                WHEN "1110" => tecla_codificada <= "0001"; -- Tecla 1
+                WHEN "1101" => tecla_codificada <= "0010"; -- Tecla 2
+                WHEN "1011" => tecla_codificada <= "0011"; -- Tecla 3
+                WHEN "0111" => tecla_codificada <= "1010"; -- Tecla A
+                WHEN OTHERS => NULL;
+            END CASE;
+        ELSIF filas = "1101" THEN -- Fila 1
+            CASE columnas IS
+                WHEN "1110" => tecla_codificada <= "0100"; -- Tecla 4
+                WHEN "1101" => tecla_codificada <= "0101"; -- Tecla 5
+                WHEN "1011" => tecla_codificada <= "0110"; -- Tecla 6
+                WHEN "0111" => tecla_codificada <= "1011"; -- Tecla B
+                WHEN OTHERS => NULL;
+            END CASE;
+        ELSIF filas = "1011" THEN -- Fila 2
+            CASE columnas IS
+                WHEN "1110" => tecla_codificada <= "0111"; -- Tecla 7
+                WHEN "1101" => tecla_codificada <= "1000"; -- Tecla 8
+                WHEN "1011" => tecla_codificada <= "1001"; -- Tecla 9
+                WHEN "0111" => tecla_codificada <= "1100"; -- Tecla C
+                WHEN OTHERS => NULL;
+            END CASE;
+        ELSIF filas = "0111" THEN -- Fila 3
+            CASE columnas IS
+                WHEN "1110" => tecla_codificada <= "1110"; -- Tecla *
+                WHEN "1101" => tecla_codificada <= "0000"; -- Tecla 0
+                WHEN "1011" => tecla_codificada <= "1111"; -- Tecla #
+                WHEN "0111" => tecla_codificada <= "1101"; -- Tecla D
+                WHEN OTHERS => NULL;
+            END CASE;
+        ELSE
+            tecla_codificada <= "1111"; -- Ninguna tecla presionada
+        END IF;
+    END PROCESS;
+
+    -- Proceso para decodificar el código a 7 segmentos
+    PROCESS (tecla_codificada)
+    BEGIN
+        CASE tecla_codificada IS
+            WHEN "0000" => segmentos <= "1000000"; -- 0
+            WHEN "0001" => segmentos <= "1111001"; -- 1
+            WHEN "0010" => segmentos <= "0100100"; -- 2
+            WHEN "0011" => segmentos <= "0110000"; -- 3
+            WHEN "0100" => segmentos <= "0011001"; -- 4
+            WHEN "0101" => segmentos <= "0010010"; -- 5
+            WHEN "0110" => segmentos <= "0000010"; -- 6
+            WHEN "0111" => segmentos <= "1111000"; -- 7
+            WHEN "1000" => segmentos <= "0000000"; -- 8
+            WHEN "1001" => segmentos <= "0010000"; -- 9
+            WHEN "1010" => segmentos <= "0001000"; -- A
+            WHEN "1011" => segmentos <= "0000011"; -- B
+            WHEN "1100" => segmentos <= "1000110"; -- C
+            WHEN "1101" => segmentos <= "0100001"; -- D
+            WHEN "1110" => segmentos <= "0000110"; -- E
+            WHEN "1111" => segmentos <= "0001110"; -- F
+            WHEN OTHERS => segmentos <= "1111111"; -- Apagado
+        END CASE;
+    END PROCESS;
+
+END Behavioral;

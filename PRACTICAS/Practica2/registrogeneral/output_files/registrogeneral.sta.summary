@@ -1,0 +1,77 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1000mV 85C Model Setup 'CLK'
+Slack : -3.893
+TNS   : -373.623
+
+Type  : Slow 1000mV 85C Model Setup 'divisor:U_DIVISOR|clk_reg'
+Slack : -1.057
+TNS   : -4.228
+
+Type  : Slow 1000mV 85C Model Hold 'CLK'
+Slack : -0.353
+TNS   : -0.353
+
+Type  : Slow 1000mV 85C Model Hold 'divisor:U_DIVISOR|clk_reg'
+Slack : 0.568
+TNS   : 0.000
+
+Type  : Slow 1000mV 85C Model Minimum Pulse Width 'CLK'
+Slack : -3.000
+TNS   : -198.693
+
+Type  : Slow 1000mV 85C Model Minimum Pulse Width 'divisor:U_DIVISOR|clk_reg'
+Slack : -1.763
+TNS   : -7.052
+
+Type  : Slow 1000mV 0C Model Setup 'CLK'
+Slack : -3.716
+TNS   : -361.758
+
+Type  : Slow 1000mV 0C Model Setup 'divisor:U_DIVISOR|clk_reg'
+Slack : -1.131
+TNS   : -4.524
+
+Type  : Slow 1000mV 0C Model Hold 'CLK'
+Slack : -0.382
+TNS   : -0.382
+
+Type  : Slow 1000mV 0C Model Hold 'divisor:U_DIVISOR|clk_reg'
+Slack : 0.555
+TNS   : 0.000
+
+Type  : Slow 1000mV 0C Model Minimum Pulse Width 'CLK'
+Slack : -3.000
+TNS   : -198.693
+
+Type  : Slow 1000mV 0C Model Minimum Pulse Width 'divisor:U_DIVISOR|clk_reg'
+Slack : -1.763
+TNS   : -7.052
+
+Type  : Fast 1000mV 0C Model Setup 'CLK'
+Slack : -1.744
+TNS   : -156.196
+
+Type  : Fast 1000mV 0C Model Setup 'divisor:U_DIVISOR|clk_reg'
+Slack : -0.161
+TNS   : -0.644
+
+Type  : Fast 1000mV 0C Model Hold 'CLK'
+Slack : -0.294
+TNS   : -0.294
+
+Type  : Fast 1000mV 0C Model Hold 'divisor:U_DIVISOR|clk_reg'
+Slack : 0.306
+TNS   : 0.000
+
+Type  : Fast 1000mV 0C Model Minimum Pulse Width 'CLK'
+Slack : -3.000
+TNS   : -198.693
+
+Type  : Fast 1000mV 0C Model Minimum Pulse Width 'divisor:U_DIVISOR|clk_reg'
+Slack : -1.763
+TNS   : -7.052
+
+------------------------------------------------------------

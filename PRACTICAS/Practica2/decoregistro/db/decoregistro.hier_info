@@ -1,0 +1,284 @@
+|decoregistro
+CLK => keypad:keypad_inst.CLK
+CLK => debouncer:debouncer_set_inst.clk
+CLK => debouncer:debouncer_clr_inst.clk
+CLK => latchRS:controler_inst.clk
+CLK => registro:registro_inst.clk
+COLUMNAS[0] => keypad:keypad_inst.COLUMNAS[0]
+COLUMNAS[1] => keypad:keypad_inst.COLUMNAS[1]
+COLUMNAS[2] => keypad:keypad_inst.COLUMNAS[2]
+COLUMNAS[3] => keypad:keypad_inst.COLUMNAS[3]
+FILAS[0] << keypad:keypad_inst.FILAS[0]
+FILAS[1] << keypad:keypad_inst.FILAS[1]
+FILAS[2] << keypad:keypad_inst.FILAS[2]
+FILAS[3] << keypad:keypad_inst.FILAS[3]
+SEGMENTOS[0] << registro:registro_inst.q[0]
+SEGMENTOS[1] << registro:registro_inst.q[1]
+SEGMENTOS[2] << registro:registro_inst.q[2]
+SEGMENTOS[3] << registro:registro_inst.q[3]
+SEGMENTOS[4] << registro:registro_inst.q[4]
+SEGMENTOS[5] << registro:registro_inst.q[5]
+SEGMENTOS[6] << registro:registro_inst.q[6]
+KEY_PRESSED << keypad:keypad_inst.IND
+SET => debouncer:debouncer_set_inst.button_in
+CLR => debouncer:debouncer_clr_inst.button_in
+SEGMENTO << <GND>
+CTRL << latchRS:controler_inst.s
+
+
+|decoregistro|keypad:keypad_inst
+CLK => divisor:Div1ms.clk_in
+CLK => IND~reg0.CLK
+CLK => BOTON_PRES[0]~reg0.CLK
+CLK => BOTON_PRES[1]~reg0.CLK
+CLK => BOTON_PRES[2]~reg0.CLK
+CLK => BOTON_PRES[3]~reg0.CLK
+CLK => BOTON_PRES[4]~reg0.CLK
+CLK => BOTON_PRES[5]~reg0.CLK
+CLK => BOTON_PRES[6]~reg0.CLK
+CLK => BOTON_PRES[7]~reg0.CLK
+CLK => divisor:Div10ms.clk_in
+COLUMNAS[0] => REG_B[11][0].DATAIN
+COLUMNAS[0] => REG_B[15][0].DATAIN
+COLUMNAS[0] => REG_B[7][0].DATAIN
+COLUMNAS[0] => REG_B[3][0].DATAIN
+COLUMNAS[1] => REG_B[10][0].DATAIN
+COLUMNAS[1] => REG_B[14][0].DATAIN
+COLUMNAS[1] => REG_B[6][0].DATAIN
+COLUMNAS[1] => REG_B[2][0].DATAIN
+COLUMNAS[2] => REG_B[9][0].DATAIN
+COLUMNAS[2] => REG_B[13][0].DATAIN
+COLUMNAS[2] => REG_B[5][0].DATAIN
+COLUMNAS[2] => REG_B[1][0].DATAIN
+COLUMNAS[3] => REG_B[12][0].DATAIN
+COLUMNAS[3] => REG_B[8][0].DATAIN
+COLUMNAS[3] => REG_B[4][0].DATAIN
+COLUMNAS[3] => REG_B[0][0].DATAIN
+FILAS[0] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+FILAS[1] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+FILAS[2] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+FILAS[3] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+BOTON_PRES[0] <= BOTON_PRES[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+BOTON_PRES[1] <= BOTON_PRES[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+BOTON_PRES[2] <= BOTON_PRES[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+BOTON_PRES[3] <= BOTON_PRES[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+BOTON_PRES[4] <= BOTON_PRES[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+BOTON_PRES[5] <= BOTON_PRES[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+BOTON_PRES[6] <= BOTON_PRES[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+BOTON_PRES[7] <= BOTON_PRES[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+IND <= IND~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|decoregistro|keypad:keypad_inst|divisor:Div1ms
+clk_in => clk_reg.CLK
+clk_in => count[0].CLK
+clk_in => count[1].CLK
+clk_in => count[2].CLK
+clk_in => count[3].CLK
+clk_in => count[4].CLK
+clk_in => count[5].CLK
+clk_in => count[6].CLK
+clk_in => count[7].CLK
+clk_in => count[8].CLK
+clk_in => count[9].CLK
+clk_in => count[10].CLK
+clk_in => count[11].CLK
+clk_in => count[12].CLK
+clk_in => count[13].CLK
+clk_in => count[14].CLK
+clk_out <= clk_reg.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|decoregistro|keypad:keypad_inst|divisor:Div10ms
+clk_in => clk_reg.CLK
+clk_in => count[0].CLK
+clk_in => count[1].CLK
+clk_in => count[2].CLK
+clk_in => count[3].CLK
+clk_in => count[4].CLK
+clk_in => count[5].CLK
+clk_in => count[6].CLK
+clk_in => count[7].CLK
+clk_in => count[8].CLK
+clk_in => count[9].CLK
+clk_in => count[10].CLK
+clk_in => count[11].CLK
+clk_in => count[12].CLK
+clk_in => count[13].CLK
+clk_in => count[14].CLK
+clk_in => count[15].CLK
+clk_in => count[16].CLK
+clk_in => count[17].CLK
+clk_out <= clk_reg.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|decoregistro|decoder:decoder_inst
+key_pres[0] => Mux0.IN263
+key_pres[0] => Mux1.IN263
+key_pres[0] => Mux2.IN263
+key_pres[0] => Mux3.IN263
+key_pres[0] => Mux4.IN263
+key_pres[0] => Mux5.IN263
+key_pres[0] => Mux6.IN263
+key_pres[1] => Mux0.IN262
+key_pres[1] => Mux1.IN262
+key_pres[1] => Mux2.IN262
+key_pres[1] => Mux3.IN262
+key_pres[1] => Mux4.IN262
+key_pres[1] => Mux5.IN262
+key_pres[1] => Mux6.IN262
+key_pres[2] => Mux0.IN261
+key_pres[2] => Mux1.IN261
+key_pres[2] => Mux2.IN261
+key_pres[2] => Mux3.IN261
+key_pres[2] => Mux4.IN261
+key_pres[2] => Mux5.IN261
+key_pres[2] => Mux6.IN261
+key_pres[3] => Mux0.IN260
+key_pres[3] => Mux1.IN260
+key_pres[3] => Mux2.IN260
+key_pres[3] => Mux3.IN260
+key_pres[3] => Mux4.IN260
+key_pres[3] => Mux5.IN260
+key_pres[3] => Mux6.IN260
+key_pres[4] => Mux0.IN259
+key_pres[4] => Mux1.IN259
+key_pres[4] => Mux2.IN259
+key_pres[4] => Mux3.IN259
+key_pres[4] => Mux4.IN259
+key_pres[4] => Mux5.IN259
+key_pres[4] => Mux6.IN259
+key_pres[5] => Mux0.IN258
+key_pres[5] => Mux1.IN258
+key_pres[5] => Mux2.IN258
+key_pres[5] => Mux3.IN258
+key_pres[5] => Mux4.IN258
+key_pres[5] => Mux5.IN258
+key_pres[5] => Mux6.IN258
+key_pres[6] => Mux0.IN257
+key_pres[6] => Mux1.IN257
+key_pres[6] => Mux2.IN257
+key_pres[6] => Mux3.IN257
+key_pres[6] => Mux4.IN257
+key_pres[6] => Mux5.IN257
+key_pres[6] => Mux6.IN257
+key_pres[7] => Mux0.IN256
+key_pres[7] => Mux1.IN256
+key_pres[7] => Mux2.IN256
+key_pres[7] => Mux3.IN256
+key_pres[7] => Mux4.IN256
+key_pres[7] => Mux5.IN256
+key_pres[7] => Mux6.IN256
+key_7seg[0] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+key_7seg[1] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+key_7seg[2] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+key_7seg[3] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+key_7seg[4] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+key_7seg[5] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+key_7seg[6] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|decoregistro|debouncer:debouncer_set_inst
+clk => button_out~reg0.CLK
+clk => button_reg.CLK
+clk => count[0].CLK
+clk => count[1].CLK
+clk => count[2].CLK
+clk => count[3].CLK
+clk => count[4].CLK
+clk => count[5].CLK
+clk => count[6].CLK
+clk => count[7].CLK
+clk => count[8].CLK
+clk => count[9].CLK
+clk => count[10].CLK
+clk => count[11].CLK
+clk => count[12].CLK
+clk => count[13].CLK
+clk => count[14].CLK
+clk => count[15].CLK
+clk => count[16].CLK
+clk => count[17].CLK
+clk => count[18].CLK
+clk => count[19].CLK
+clk => count[20].CLK
+clk => count[21].CLK
+clk => count[22].CLK
+clk => count[23].CLK
+button_in => process_0.IN1
+button_in => button_reg.DATAB
+button_in => button_out.DATAB
+button_out <= button_out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|decoregistro|debouncer:debouncer_clr_inst
+clk => button_out~reg0.CLK
+clk => button_reg.CLK
+clk => count[0].CLK
+clk => count[1].CLK
+clk => count[2].CLK
+clk => count[3].CLK
+clk => count[4].CLK
+clk => count[5].CLK
+clk => count[6].CLK
+clk => count[7].CLK
+clk => count[8].CLK
+clk => count[9].CLK
+clk => count[10].CLK
+clk => count[11].CLK
+clk => count[12].CLK
+clk => count[13].CLK
+clk => count[14].CLK
+clk => count[15].CLK
+clk => count[16].CLK
+clk => count[17].CLK
+clk => count[18].CLK
+clk => count[19].CLK
+button_in => process_0.IN1
+button_in => button_reg.DATAB
+button_in => button_out.DATAB
+button_out <= button_out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|decoregistro|latchRS:controler_inst
+clk => q_reg.CLK
+set_btn => process_0.IN0
+set_btn => process_0.IN0
+set_btn => process_0.IN0
+clr_btn => process_0.IN1
+clr_btn => process_0.IN1
+clr_btn => process_0.IN1
+s <= q_reg.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|decoregistro|registro:registro_inst
+d[0] => q_int[0].DATAIN
+d[1] => q_int[1].DATAIN
+d[2] => q_int[2].DATAIN
+d[3] => q_int[3].DATAIN
+d[4] => q_int[4].DATAIN
+d[5] => q_int[5].DATAIN
+d[6] => q_int[6].DATAIN
+clk => q_int[0].CLK
+clk => q_int[1].CLK
+clk => q_int[2].CLK
+clk => q_int[3].CLK
+clk => q_int[4].CLK
+clk => q_int[5].CLK
+clk => q_int[6].CLK
+s => q_int[0].ENA
+s => q_int[1].ENA
+s => q_int[2].ENA
+s => q_int[3].ENA
+s => q_int[4].ENA
+s => q_int[5].ENA
+s => q_int[6].ENA
+q[0] <= q_int[0].DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= q_int[1].DB_MAX_OUTPUT_PORT_TYPE
+q[2] <= q_int[2].DB_MAX_OUTPUT_PORT_TYPE
+q[3] <= q_int[3].DB_MAX_OUTPUT_PORT_TYPE
+q[4] <= q_int[4].DB_MAX_OUTPUT_PORT_TYPE
+q[5] <= q_int[5].DB_MAX_OUTPUT_PORT_TYPE
+q[6] <= q_int[6].DB_MAX_OUTPUT_PORT_TYPE
+
+

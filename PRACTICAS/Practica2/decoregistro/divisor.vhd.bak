@@ -1,0 +1,37 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.ALL;
+USE ieee.numeric_std.ALL;
+
+-- Entidad del divisor de frecuencia
+ENTITY frequency_divider IS
+    GENERIC (
+        desired_freq : INTEGER := 1  -- Frecuencia deseada en Hz
+    );
+    PORT (
+        clk_in  : IN  STD_LOGIC;     -- Reloj de entrada de 50 MHz
+        clk_out : OUT STD_LOGIC      -- Reloj de salida dividido
+    );
+END frequency_divider;
+
+-- Arquitectura del divisor de frecuencia
+ARCHITECTURE Behavioral OF frequency_divider IS
+    CONSTANT input_freq : INTEGER := 50000000;  -- Frecuencia de entrada en Hz (50 MHz)
+    CONSTANT max_count  : INTEGER := input_freq / (2 * desired_freq);
+    SIGNAL count        : INTEGER RANGE 0 TO max_count := 0;
+    SIGNAL clk_reg      : STD_LOGIC := '0';
+BEGIN
+    PROCESS (clk_in)
+    BEGIN
+        IF rising_edge(clk_in) THEN
+            IF count < max_count - 1 THEN
+                count <= count + 1;
+            ELSE
+                count <= 0;
+                clk_reg <= NOT clk_reg;
+            END IF;
+        END IF;
+    END PROCESS;
+
+    clk_out <= clk_reg;
+
+END Behavioral;

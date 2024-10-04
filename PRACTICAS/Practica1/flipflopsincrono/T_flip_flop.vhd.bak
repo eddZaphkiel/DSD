@@ -1,0 +1,23 @@
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+
+ENTITY T_flip_flop IS
+    PORT (
+        T   : IN  STD_LOGIC;
+        CLK : IN  STD_LOGIC;
+        Q0  : OUT STD_LOGIC
+    );
+END D_flip_flop;
+
+ARCHITECTURE flipflop OF D_flip_flop IS
+    SIGNAL Q_int : STD_LOGIC := '0';
+BEGIN
+    PROCESS (CLK)
+    BEGIN
+        IF rising_edge(CLK) THEN
+            Q_int <= D;
+        END IF;
+    END PROCESS;
+
+    Q0 <= Q_int;
+END flipflop;

@@ -1,0 +1,228 @@
+|registrogeneral
+CLK => divisor:U_DIVISOR.clk_in
+CLK => debouncer:U_DEBOUNCERS:3:INST_DEBOUNCER.clk
+CLK => debouncer:U_DEBOUNCERS:2:INST_DEBOUNCER.clk
+CLK => debouncer:U_DEBOUNCERS:1:INST_DEBOUNCER.clk
+CLK => debouncer:U_DEBOUNCERS:0:INST_DEBOUNCER.clk
+CLK => decoprioridad:U_DECOPRIORIDAD.clk
+INPUT[0] => registro:U_REGISTRO.d[0]
+INPUT[1] => registro:U_REGISTRO.d[1]
+INPUT[2] => registro:U_REGISTRO.d[2]
+INPUT[3] => registro:U_REGISTRO.d[3]
+CTRL[0] => debouncer:U_DEBOUNCERS:0:INST_DEBOUNCER.button_in
+CTRL[1] => debouncer:U_DEBOUNCERS:1:INST_DEBOUNCER.button_in
+CTRL[2] => debouncer:U_DEBOUNCERS:2:INST_DEBOUNCER.button_in
+CTRL[3] => debouncer:U_DEBOUNCERS:3:INST_DEBOUNCER.button_in
+BITS[0] << registro:U_REGISTRO.q[0]
+BITS[1] << registro:U_REGISTRO.q[1]
+BITS[2] << registro:U_REGISTRO.q[2]
+BITS[3] << registro:U_REGISTRO.q[3]
+
+
+|registrogeneral|divisor:U_DIVISOR
+clk_in => clk_reg.CLK
+clk_in => count[0].CLK
+clk_in => count[1].CLK
+clk_in => count[2].CLK
+clk_in => count[3].CLK
+clk_in => count[4].CLK
+clk_in => count[5].CLK
+clk_in => count[6].CLK
+clk_in => count[7].CLK
+clk_in => count[8].CLK
+clk_in => count[9].CLK
+clk_in => count[10].CLK
+clk_in => count[11].CLK
+clk_in => count[12].CLK
+clk_in => count[13].CLK
+clk_in => count[14].CLK
+clk_in => count[15].CLK
+clk_in => count[16].CLK
+clk_in => count[17].CLK
+clk_in => count[18].CLK
+clk_in => count[19].CLK
+clk_in => count[20].CLK
+clk_in => count[21].CLK
+clk_in => count[22].CLK
+clk_in => count[23].CLK
+clk_out <= clk_reg.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|registrogeneral|debouncer:\U_DEBOUNCERS:3:INST_DEBOUNCER
+clk => button_out~reg0.CLK
+clk => button_reg.CLK
+clk => count[0].CLK
+clk => count[1].CLK
+clk => count[2].CLK
+clk => count[3].CLK
+clk => count[4].CLK
+clk => count[5].CLK
+clk => count[6].CLK
+clk => count[7].CLK
+clk => count[8].CLK
+clk => count[9].CLK
+clk => count[10].CLK
+clk => count[11].CLK
+clk => count[12].CLK
+clk => count[13].CLK
+clk => count[14].CLK
+clk => count[15].CLK
+clk => count[16].CLK
+clk => count[17].CLK
+clk => count[18].CLK
+clk => count[19].CLK
+button_in => process_0.IN1
+button_in => button_reg.DATAB
+button_in => button_out.DATAB
+button_out <= button_out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|registrogeneral|debouncer:\U_DEBOUNCERS:2:INST_DEBOUNCER
+clk => button_out~reg0.CLK
+clk => button_reg.CLK
+clk => count[0].CLK
+clk => count[1].CLK
+clk => count[2].CLK
+clk => count[3].CLK
+clk => count[4].CLK
+clk => count[5].CLK
+clk => count[6].CLK
+clk => count[7].CLK
+clk => count[8].CLK
+clk => count[9].CLK
+clk => count[10].CLK
+clk => count[11].CLK
+clk => count[12].CLK
+clk => count[13].CLK
+clk => count[14].CLK
+clk => count[15].CLK
+clk => count[16].CLK
+clk => count[17].CLK
+clk => count[18].CLK
+clk => count[19].CLK
+button_in => process_0.IN1
+button_in => button_reg.DATAB
+button_in => button_out.DATAB
+button_out <= button_out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|registrogeneral|debouncer:\U_DEBOUNCERS:1:INST_DEBOUNCER
+clk => button_out~reg0.CLK
+clk => button_reg.CLK
+clk => count[0].CLK
+clk => count[1].CLK
+clk => count[2].CLK
+clk => count[3].CLK
+clk => count[4].CLK
+clk => count[5].CLK
+clk => count[6].CLK
+clk => count[7].CLK
+clk => count[8].CLK
+clk => count[9].CLK
+clk => count[10].CLK
+clk => count[11].CLK
+clk => count[12].CLK
+clk => count[13].CLK
+clk => count[14].CLK
+clk => count[15].CLK
+clk => count[16].CLK
+clk => count[17].CLK
+clk => count[18].CLK
+clk => count[19].CLK
+button_in => process_0.IN1
+button_in => button_reg.DATAB
+button_in => button_out.DATAB
+button_out <= button_out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|registrogeneral|debouncer:\U_DEBOUNCERS:0:INST_DEBOUNCER
+clk => button_out~reg0.CLK
+clk => button_reg.CLK
+clk => count[0].CLK
+clk => count[1].CLK
+clk => count[2].CLK
+clk => count[3].CLK
+clk => count[4].CLK
+clk => count[5].CLK
+clk => count[6].CLK
+clk => count[7].CLK
+clk => count[8].CLK
+clk => count[9].CLK
+clk => count[10].CLK
+clk => count[11].CLK
+clk => count[12].CLK
+clk => count[13].CLK
+clk => count[14].CLK
+clk => count[15].CLK
+clk => count[16].CLK
+clk => count[17].CLK
+clk => count[18].CLK
+clk => count[19].CLK
+button_in => process_0.IN1
+button_in => button_reg.DATAB
+button_in => button_out.DATAB
+button_out <= button_out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|registrogeneral|decoprioridad:U_DECOPRIORIDAD
+clk => code_int[0].CLK
+clk => code_int[1].CLK
+ctrl[0] => code_int.OUTPUTSELECT
+ctrl[0] => code_int.OUTPUTSELECT
+ctrl[1] => code_int.OUTPUTSELECT
+ctrl[1] => code_int.OUTPUTSELECT
+ctrl[2] => code_int.OUTPUTSELECT
+ctrl[2] => code_int.OUTPUTSELECT
+ctrl[3] => code_int.OUTPUTSELECT
+ctrl[3] => code_int.OUTPUTSELECT
+code[0] <= code_int[0].DB_MAX_OUTPUT_PORT_TYPE
+code[1] <= code_int[1].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|registrogeneral|registro:U_REGISTRO
+d[0] => Mux3.IN0
+d[1] => Mux2.IN0
+d[2] => Mux1.IN0
+d[3] => Mux0.IN0
+clk => D_flip_flop:U_flipflopsD:0:flipflopD_inst.CLK
+clk => D_flip_flop:U_flipflopsD:1:flipflopD_inst.CLK
+clk => D_flip_flop:U_flipflopsD:2:flipflopD_inst.CLK
+clk => D_flip_flop:U_flipflopsD:3:flipflopD_inst.CLK
+q[0] <= D_flip_flop:U_flipflopsD:0:flipflopD_inst.Q0
+q[1] <= D_flip_flop:U_flipflopsD:1:flipflopD_inst.Q0
+q[2] <= D_flip_flop:U_flipflopsD:2:flipflopD_inst.Q0
+q[3] <= D_flip_flop:U_flipflopsD:3:flipflopD_inst.Q0
+s[0] => Mux0.IN2
+s[0] => Mux1.IN2
+s[0] => Mux2.IN2
+s[0] => Mux3.IN2
+s[1] => Mux0.IN1
+s[1] => Mux1.IN1
+s[1] => Mux2.IN1
+s[1] => Mux3.IN1
+
+
+|registrogeneral|registro:U_REGISTRO|d_flip_flop:\U_flipflopsD:0:flipflopD_inst
+d => q_int.DATAIN
+clk => q_int.CLK
+q0 <= q_int.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|registrogeneral|registro:U_REGISTRO|d_flip_flop:\U_flipflopsD:1:flipflopD_inst
+d => q_int.DATAIN
+clk => q_int.CLK
+q0 <= q_int.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|registrogeneral|registro:U_REGISTRO|d_flip_flop:\U_flipflopsD:2:flipflopD_inst
+d => q_int.DATAIN
+clk => q_int.CLK
+q0 <= q_int.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|registrogeneral|registro:U_REGISTRO|d_flip_flop:\U_flipflopsD:3:flipflopD_inst
+d => q_int.DATAIN
+clk => q_int.CLK
+q0 <= q_int.DB_MAX_OUTPUT_PORT_TYPE
+
+

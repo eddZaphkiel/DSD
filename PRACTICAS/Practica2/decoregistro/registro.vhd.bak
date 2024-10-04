@@ -1,0 +1,43 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.ALL;
+
+ENTITY registro_7bits IS
+    PORT (
+        D   : IN  STD_LOGIC_VECTOR(6 DOWNTO 0);
+        CLK : IN  STD_LOGIC;
+        SET : IN  STD_LOGIC;
+        CLR : IN  STD_LOGIC;
+        Q   : OUT STD_LOGIC_VECTOR(6 DOWNTO 0)
+    );
+END registro_7bits;
+
+ARCHITECTURE registro OF registro_7bits IS
+
+    -- Declaración del componente D_flip_flop
+    COMPONENT D_flip_flop
+        PORT (
+            D   : IN  STD_LOGIC;
+            SET : IN  STD_LOGIC;
+            CLR : IN  STD_LOGIC;
+            CLK : IN  STD_LOGIC;
+            Q0  : OUT STD_LOGIC;
+            Q1  : OUT STD_LOGIC
+        );
+    END COMPONENT;
+
+BEGIN
+
+    -- Generar instancias de flip-flops para cada bit
+    gen_flip_flops: FOR i IN 0 TO 6 GENERATE
+        FF_inst: D_flip_flop
+            PORT MAP (
+                D   => D(i),
+                SET => SET,
+                CLR => CLR,
+                CLK => CLK,
+                Q0  => Q(i),
+                Q1  => OPEN  -- No se utiliza la salida negada
+            );
+    END GENERATE;
+
+END registro;

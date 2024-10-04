@@ -1,0 +1,26 @@
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+
+ENTITY T_flip_flop IS
+    PORT (
+        T   : IN  STD_LOGIC;
+        CLK : IN  STD_LOGIC;
+        Q0  : OUT STD_LOGIC
+    );
+END T_flip_flop;
+
+ARCHITECTURE Behavior OF T_flip_flop IS
+    SIGNAL Q_int : STD_LOGIC := '0';
+BEGIN
+    PROCESS (CLK)
+    BEGIN
+        IF rising_edge(CLK) THEN
+            IF T = '1' THEN
+                Q_int <= NOT Q_int;
+            END IF;
+            -- Si T = '0', Q_int permanece igual
+        END IF;
+    END PROCESS;
+
+    Q0 <= Q_int;
+END Behavior;

@@ -1,0 +1,42 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.ALL;
+USE ieee.numeric_std.ALL;
+
+ENTITY debouncer IS
+    GENERIC (
+        debounce_time : INTEGER := 20000  -- Tiempo de antirrebote en microsegundos (20 ms)
+    );
+    PORT (
+        clk        : IN  STD_LOGIC;       -- Reloj del sistema (50 MHz)
+        reset      : IN  STD_LOGIC;       -- Señal de reinicio
+        button_in  : IN  STD_LOGIC;       -- Señal de entrada del botón o tecla
+        button_out : OUT STD_LOGIC        -- Señal de salida filtrada
+    );
+END debouncer;
+
+ARCHITECTURE Behavioral OF debouncer IS
+    CONSTANT clk_freq  : INTEGER := 50000000;  -- Frecuencia del reloj en Hz
+    CONSTANT max_count : INTEGER := (clk_freq / 1000000) * debounce_time;
+    SIGNAL count       : INTEGER RANGE 0 TO max_count := 0;
+    SIGNAL button_reg  : STD_LOGIC := '0';
+BEGIN
+    PROCESS (clk, reset)
+    BEGIN
+        IF reset = '1' THEN
+            count      <= 0;
+            button_reg <= '0';
+            button_out <= '0';
+        ELSIF rising_edge(clk) THEN
+            IF button_in /= button_reg THEN
+                count <= count + 1;
+                IF count >= max_count THEN
+                    button_reg <= button_in;
+                    button_out <= button_in;
+                    count <= 0;
+                END IF;
+            ELSE
+                count <= 0;
+            END IF;
+        END IF;
+    END PROCESS;
+END Behavioral;

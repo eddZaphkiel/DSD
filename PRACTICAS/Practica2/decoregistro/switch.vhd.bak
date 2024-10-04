@@ -1,0 +1,30 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity switch is
+    port(
+        clk     : in  std_logic;  -- Señal de reloj
+        set_btn : in  std_logic;  -- Señal del botón SET (antirrebote aplicado)
+        clr_btn : in  std_logic;  -- Señal del botón CLR (antirrebote aplicado)
+        s       : out std_logic   -- Salida del switch
+    );
+end switch;
+
+architecture behavioral of switch is
+    signal s_reg : std_logic := '0';  -- Registro interno para almacenar el estado de 's'
+begin
+    process(clk)
+    begin
+        if rising_edge(clk) then
+            if set_btn = '1' then
+                s_reg <= '1';  -- Si SET está presionado, S es 1
+            elsif clr_btn = '1' then
+                s_reg <= '0';  -- Si CLR está presionado y SET no, S es 0
+            else
+                s_reg <= s_reg;  -- Mantener el valor anterior de S
+            end if;
+        end if;
+    end process;
+
+    s <= s_reg;  -- Asignar el valor del registro a la salida
+end behavioral;

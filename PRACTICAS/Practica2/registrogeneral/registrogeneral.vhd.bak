@@ -1,0 +1,8 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+entity registrogeneral is
+	port(
+		INPUT 	:	in 	std_logic_vector(3 downto 0);
+		CTRL		: 	in		std_logic_vector(4 downto 0);	
+	)

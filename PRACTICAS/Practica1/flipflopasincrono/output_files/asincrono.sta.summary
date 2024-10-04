@@ -1,0 +1,113 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1000mV 85C Model Setup 'CLK'
+Slack : -3.958
+TNS   : -91.218
+
+Type  : Slow 1000mV 85C Model Setup 'T_flip_flop:TFF0|Q_int'
+Slack : -0.018
+TNS   : -0.018
+
+Type  : Slow 1000mV 85C Model Setup 'divisor:U_DIV|clk_reg'
+Slack : -0.015
+TNS   : -0.015
+
+Type  : Slow 1000mV 85C Model Hold 'CLK'
+Slack : -0.201
+TNS   : -0.201
+
+Type  : Slow 1000mV 85C Model Hold 'divisor:U_DIV|clk_reg'
+Slack : -0.032
+TNS   : -0.032
+
+Type  : Slow 1000mV 85C Model Hold 'T_flip_flop:TFF0|Q_int'
+Slack : 0.567
+TNS   : 0.000
+
+Type  : Slow 1000mV 85C Model Minimum Pulse Width 'CLK'
+Slack : -3.000
+TNS   : -48.838
+
+Type  : Slow 1000mV 85C Model Minimum Pulse Width 'T_flip_flop:TFF0|Q_int'
+Slack : -1.763
+TNS   : -1.763
+
+Type  : Slow 1000mV 85C Model Minimum Pulse Width 'divisor:U_DIV|clk_reg'
+Slack : -1.763
+TNS   : -1.763
+
+Type  : Slow 1000mV 0C Model Setup 'CLK'
+Slack : -3.793
+TNS   : -88.474
+
+Type  : Slow 1000mV 0C Model Setup 'T_flip_flop:TFF0|Q_int'
+Slack : -0.002
+TNS   : -0.002
+
+Type  : Slow 1000mV 0C Model Setup 'divisor:U_DIV|clk_reg'
+Slack : 0.004
+TNS   : 0.000
+
+Type  : Slow 1000mV 0C Model Hold 'CLK'
+Slack : -0.233
+TNS   : -0.233
+
+Type  : Slow 1000mV 0C Model Hold 'divisor:U_DIV|clk_reg'
+Slack : -0.061
+TNS   : -0.061
+
+Type  : Slow 1000mV 0C Model Hold 'T_flip_flop:TFF0|Q_int'
+Slack : 0.547
+TNS   : 0.000
+
+Type  : Slow 1000mV 0C Model Minimum Pulse Width 'CLK'
+Slack : -3.000
+TNS   : -48.838
+
+Type  : Slow 1000mV 0C Model Minimum Pulse Width 'T_flip_flop:TFF0|Q_int'
+Slack : -1.763
+TNS   : -1.763
+
+Type  : Slow 1000mV 0C Model Minimum Pulse Width 'divisor:U_DIV|clk_reg'
+Slack : -1.763
+TNS   : -1.763
+
+Type  : Fast 1000mV 0C Model Setup 'CLK'
+Slack : -1.775
+TNS   : -39.088
+
+Type  : Fast 1000mV 0C Model Setup 'divisor:U_DIV|clk_reg'
+Slack : 0.225
+TNS   : 0.000
+
+Type  : Fast 1000mV 0C Model Setup 'T_flip_flop:TFF0|Q_int'
+Slack : 0.451
+TNS   : 0.000
+
+Type  : Fast 1000mV 0C Model Hold 'CLK'
+Slack : -0.208
+TNS   : -0.208
+
+Type  : Fast 1000mV 0C Model Hold 'divisor:U_DIV|clk_reg'
+Slack : -0.033
+TNS   : -0.033
+
+Type  : Fast 1000mV 0C Model Hold 'T_flip_flop:TFF0|Q_int'
+Slack : 0.306
+TNS   : 0.000
+
+Type  : Fast 1000mV 0C Model Minimum Pulse Width 'CLK'
+Slack : -3.000
+TNS   : -48.838
+
+Type  : Fast 1000mV 0C Model Minimum Pulse Width 'T_flip_flop:TFF0|Q_int'
+Slack : -1.763
+TNS   : -1.763
+
+Type  : Fast 1000mV 0C Model Minimum Pulse Width 'divisor:U_DIV|clk_reg'
+Slack : -1.763
+TNS   : -1.763
+
+------------------------------------------------------------

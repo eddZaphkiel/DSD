@@ -1,0 +1,13 @@
+vendor_name = ModelSim
+source_file = 1, G:/Mi unidad/5TO/DSD/TAREAS/led/led.vhd
+source_file = 1, output_files/Chain2.cdf
+source_file = 1, output_files/Chain5.cdf
+source_file = 1, output_files/Chain6.cdf
+source_file = 1, G:/Mi unidad/5TO/DSD/TAREAS/led/db/led.cbx.xml
+source_file = 1, c:/altera/13.1/quartus/libraries/vhdl/ieee/prmtvs_b.vhd
+source_file = 1, c:/altera/13.1/quartus/libraries/vhdl/ieee/prmtvs_p.vhd
+source_file = 1, c:/altera/13.1/quartus/libraries/vhdl/ieee/timing_b.vhd
+source_file = 1, c:/altera/13.1/quartus/libraries/vhdl/ieee/timing_p.vhd
+design_name = led
+instance = comp, \S~output\, S~output, led, 1
+instance = comp, \A~input\, A~input, led, 1

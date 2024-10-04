@@ -1,0 +1,14 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_arith.all;
+use ieee.std_logic_unsigned.all;
+
+entity decoregistro is
+	port (
+		CLK: in std_logic;
+		C: in std_logic_vector(3 downto 0);
+		F: out std_logic_vector(3 downto 0);
+		SEG: out std_logic_vector(6 downto 0);
+		L: out std_logic
+	);
+end decoregistro;
